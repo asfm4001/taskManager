@@ -1,0 +1,12 @@
+{% extends "task/base.html" %}
+{% load crispy_forms_tags %}
+{% block container %}
+    <h1>Register</h1>
+    {% if form %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Register">
+        </form>
+    {% endif %}
+{% endblock %}
