@@ -4,7 +4,7 @@ from apps.task.views import *
 app_name = "task"
 
 urlpatterns = [
-    path('category/', CategoryListView.as_view(), name="category_list"),
+    path('category/', CategoryListCreateView.as_view(), name="category_list"),
     # path('category/<int:pk>', CategoryDetailView.as_view(), name="category_detail"),
     path('tag/', TagListView.as_view(), name="tag_list"),
     path('', TaskListView.as_view(), name="task_list"),

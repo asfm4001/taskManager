@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',      # django-crispy-forms
     'crispy_bootstrap4', # crispy-bootstrap4
+    'rest_framework',    # model -> json
     'apps.task',
     'apps.users',
+    'apps.api',
 ]
 
 MIDDLEWARE = [

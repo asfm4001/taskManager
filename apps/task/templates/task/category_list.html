@@ -1,12 +1,20 @@
 {% extends "task/base.html" %}
 {% block container %}
     <h1>Categories</h1>
+    {% load crispy_forms_tags %}
+    {% if form %}
+        <form class="form-inline" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    {% endif %}
+    <br/>
     {% if category_list %}
         <div class="list-group">
             {% for category in category_list %}
                 <a href="#" class="list-group-item list-group-item-action">{{ category.name }}</a>
             {% endfor %}
-        </div>
-        
+        </div>  
     {% endif %}
 {% endblock %}
