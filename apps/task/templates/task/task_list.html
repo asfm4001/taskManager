@@ -1,0 +1,12 @@
+{% extends "task/base.html" %}
+{% block container %}
+    <h1>Tasks</h1>
+    {% if task_list %}
+        <div class="list-group">
+            {% for task in task_list %}
+                <a href="{% url 'task:task_detail' task.id %}" class="list-group-item list-group-item-action">{{ task.title }}</a>
+            {% endfor %}
+        </div>
+        
+    {% endif %}
+{% endblock %}
