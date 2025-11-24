@@ -56,3 +56,7 @@ class TaskCreateView(generic.CreateView):
     model = Task
     fields = ['title', 'category', 'tags', 'status']
     success_url = reverse_lazy("task:task_list")
+    def form_valid(self, form):
+        # 將當前使用者設為 owner
+        form.instance.owner = self.request.user
+        return super().form_valid(form)

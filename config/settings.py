@@ -136,3 +136,8 @@ from django.urls import reverse_lazy
 LOGIN_URL = reverse_lazy("users:login")
 LOGOUT_REDIRECT_URL = reverse_lazy("users:login")
 LOGIN_REDIRECT_URL = reverse_lazy("users:login")
+
+# FIXME
+# Add this var to .env file
+# 將mail顯示至console中(避免真的寄出信件)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
