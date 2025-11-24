@@ -1,16 +1,22 @@
 {% extends "task/base.html" %}
 {% block container %}
     {% if object %}
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;" data-id="{{ object.id }}">
             <div class="card-body">
                 <h5 class="card-title">{{ object.title }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ object.category }}</h6>
                 <p class="card-text">
                 <h6>
-                {% for tag in object.tags.all %}
-                <span class="badge badge-primary">{{ tag }}</span>
-                {% endfor %}
+                    {% for tag in object.tags.all %}
+                    <span class="badge badge-primary">{{ tag }}</span>
+                    {% endfor %}
                 </h6>
+                <select id="status">
+                    {% for key, label in status_choices %}
+                    <option value="{{ key }}" {% if object.status == key %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <br/>
                 <small class="text-muted">上次更新: {{ object.updated_at }}</small>
                 </p>
             </div>

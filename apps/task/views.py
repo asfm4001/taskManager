@@ -47,8 +47,12 @@ class TagCreateView(generic.CreateView):
 
 class TaskDetailView(generic.DetailView):
     model = Task
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["status_choices"] = Task.get_status_choices()
+        return context
 
 class TaskCreateView(generic.CreateView):
     model = Task
-    fields = ['title', 'category', 'tags']
+    fields = ['title', 'category', 'tags', 'status']
     success_url = reverse_lazy("task:task_list")
