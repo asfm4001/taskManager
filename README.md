@@ -82,15 +82,28 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
 
 ## 📦 Installation & Run
 1️⃣ 下載專案
-`git clone https://github.com/asfm4001/taskManager.git`
+```
+git clone https://github.com/asfm4001/taskManager.git
+```
 
 2️⃣ 建立env & 安裝套件
-1. `python3 venv -m .venv`
-2. `source .venv/bin/activate`
-3. `pip install -r requirements.txt`
+1. 建立虛擬環境
+   ```
+   python3 venv -m .venv
+   ```
+2. 進入虛擬環境
+   ```
+   source .venv/bin/activate
+   ```
+3. 安裝套件
+   ```
+   pip install -r requirements.txt
+   ```
 
 3️⃣ 啟動專案
-`python manage.py runserver`
+```
+python manage.py runserver
+```
 
 🧪 測試帳號
 * Test : test99/@WSX3edc
@@ -99,9 +112,16 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
 略
 
 ## 📸 Demo
-略
+註冊
+![註冊](/doc/register.png)
+登入
+![登入](/doc/login.png)
+登入後轉至任務清單
+![登入成功](/doc/login_success.png)
+修改狀態後，mail給任務的擁有者
+![console](/doc/notify_by_mail(console).png)
 
-🗺 API Documentation
+## 🗺 API Documentation
 | Method | Endpoint                  | Description            | Auth |
 |--------|---------------------------|------------------------|------|
 | GET    | `v1/task/`                | 取得所有任務             | No   |

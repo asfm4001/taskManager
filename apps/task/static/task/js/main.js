@@ -16,7 +16,7 @@ function getCookie(name) {
 
 // 更新task狀態
 async function updateTask(id, status) {
-    const targetURL = '/api/v1/task/' + id;
+    const targetURL = '/api/v1/task/' + id + '/';
     const csrftoken = getCookie('csrftoken');  // 取得 CSRF token
     const response = await fetch(
         targetURL,
