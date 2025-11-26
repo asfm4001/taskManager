@@ -11,6 +11,20 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
 * AJAX 串連後台API
 * 將mail輸出至console中，避免**真正**寄出信件
 
+---
+**ToC**
+- [🎯 任務管理系統](#-任務管理系統)
+  - [📖 Introduction](#-introduction)
+  - [🚀 Features](#-features)
+  - [📂 Project Structure](#-project-structure)
+  - [🛠 Tech Stack](#-tech-stack)
+  - [📦 Installation \& Run](#-installation--run)
+  - [⚙️ Configurations](#️-configurations)
+  - [📸 Demo](#-demo)
+  - [🗺 API Documentation](#-api-documentation)
+  - [📚 References](#-references)
+
+
 ## 🚀 Features
 1. 使用者登入、註冊
 2. 任務、分類、標籤 CRUD，模型串連
@@ -107,8 +121,9 @@ python manage.py runserver
 
 🧪 測試帳號
 * Test : test99/@WSX3edc
+* Admin: admin/admin
 
-## ⚙️ 設定 Configurations
+## ⚙️ Configurations
 略
 
 ## 📸 Demo
@@ -116,6 +131,9 @@ python manage.py runserver
 ![註冊](/doc/register.png)
 登入
 ![登入](/doc/login.png)
+使用第三方憑證登入(Google)
+![Google憑證跳轉](/doc/redirect.png)
+![Google憑證登入](/doc/google_auth.png)
 登入後轉至任務清單
 ![登入成功](/doc/login_success.png)
 修改狀態後，mail給任務的擁有者
@@ -129,5 +147,5 @@ python manage.py runserver
 | GET    | `v1/category/`            | 取得所有分類             | No   |
 | GET    | `v1/tag/`                 | 取得所有標籤             | No   |
 
-## 📚 參考資料 References
+## 📚 References
 略

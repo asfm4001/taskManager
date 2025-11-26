@@ -1,4 +1,5 @@
 {% extends "task/base.html" %}
+{% load socialaccount %}
 {% load crispy_forms_tags %}
 {% block container %}
     <h1>Login</h1>
@@ -6,7 +7,11 @@
         <form method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <input type="submit" value="Login">
+            <button class="btn btn-primary" type="submit">Login</button>
+            {% get_providers as socialaccount_providers %}
+            {% for provider in socialaccount_providers %}
+                <a href="{% provider_login_url provider.id %}" class="btn btn-link" role="button" aria-pressed="true">Log in with {{ provider.name }}</a>
+            {% endfor %}
         </form>
     {% endif %}
 {% endblock %}

@@ -22,4 +22,5 @@ urlpatterns = [
     path('users/', include("apps.users.urls")),
     path('task/', include("apps.task.urls")),
     path('api/', include("apps.api.urls")),
+    path('accounts/', include('allauth.urls')),
 ]
