@@ -15,6 +15,7 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
 **ToC**
 - [🎯 任務管理系統](#-任務管理系統)
   - [📖 Introduction](#-introduction)
+  - [📹 Log](#-log)
   - [🚀 Features](#-features)
   - [📂 Project Structure](#-project-structure)
   - [🛠 Tech Stack](#-tech-stack)
@@ -23,6 +24,10 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
   - [📸 Demo](#-demo)
   - [🗺 API Documentation](#-api-documentation)
   - [📚 References](#-references)
+
+## 📹 Log
+* 2025.12.03 新增測試與CI
+* 2025.11.28 略過第三方登入跳轉畫面
 
 
 ## 🚀 Features
@@ -35,10 +40,16 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
 ## 📂 Project Structure
 ```plaintext
 .
+├── .env
+├── .github
+│   └── workflows
+│       └── ci.yml
 ├── README.md
 ├── db.sqlite3
 ├── requirements.txt 
+├── pytest.ini
 ├── manage.py
+├── templates
 ├── config
 │   ├── __init__.py
 │   ├── asgi.py
@@ -64,11 +75,13 @@ Features為ChatGPT生成內容，開發中除了基礎功能外，額外學習�
     │   ├── forms.py
     │   ├── mail.py
     │   ├── signal.py
-    │   ├── tests.py
     │   ├── urls.py
     │   ├── views.py
     │   ├── static/
     │   ├── templates/
+    │   ├── tests
+    │       ├── __init__.py
+    │       └── test_models.py
     │   ├── migrations/
     │   └── models
     │       ├── __init__.py
@@ -113,6 +126,10 @@ git clone https://github.com/asfm4001/taskManager.git
    ```
    pip install -r requirements.txt
    ```
+4. 測試[可選]
+   ```
+   pytest
+   ```
 
 3️⃣ 啟動專案
 ```
@@ -132,7 +149,6 @@ python manage.py runserver
 登入
 ![登入](/doc/login.png)
 使用第三方憑證登入(Google)
-![Google憑證跳轉](/doc/redirect.png)
 ![Google憑證登入](/doc/google_auth.png)
 登入後轉至任務清單
 ![登入成功](/doc/login_success.png)
